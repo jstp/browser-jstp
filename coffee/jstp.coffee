@@ -84,7 +84,9 @@ class Dispatch
       endpoint: pack.endpoint
       callback: callback
       context: context
-      host: pack.host[0]
+
+    if pack.host? and pack.host.length > 0
+      callbackObj.host = pack.host[0]
 
     @bound.push callbackObj
 
