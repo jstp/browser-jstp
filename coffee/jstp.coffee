@@ -57,7 +57,7 @@ class Dispatch
     pack        = new Dispatch pack
 
     if callback?
-      pack.token[@guid()] unless pack.token[0]
+      pack.token = [@guid()] unless pack.token[0]
 
     if pack.method.toLowerCase() == "bind"
       @_bind pack, callback, context

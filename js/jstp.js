@@ -80,7 +80,7 @@
       pack = new Dispatch(pack);
       if (callback != null) {
         if (!pack.token[0]) {
-          pack.token[this.guid()];
+          pack.token = [this.guid()];
         }
       }
       if (pack.method.toLowerCase() === "bind") {
