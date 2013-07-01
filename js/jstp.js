@@ -78,6 +78,11 @@
     },
     dispatch: function(pack, callback, context) {
       pack = new Dispatch(pack);
+      if (callback != null) {
+        if (!pack.token[0]) {
+          pack.token[this.guid()];
+        }
+      }
       if (pack.method.toLowerCase() === "bind") {
         this._bind(pack, callback, context);
       }
@@ -86,6 +91,12 @@
       } else {
         return this.trigger(pack);
       }
+    },
+    s4: function() {
+      return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    },
+    guid: function() {
+      return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + this.s4() + this.s4();
     },
     _sendOrConnect: function(pack, callback, context) {
       var host, packString;

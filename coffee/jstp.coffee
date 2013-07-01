@@ -56,6 +56,9 @@ class Dispatch
   dispatch: (pack, callback, context)->
     pack        = new Dispatch pack
 
+    if callback?
+      pack.token[@guid()] unless pack.token[0]
+
     if pack.method.toLowerCase() == "bind"
       @_bind pack, callback, context
 
@@ -63,6 +66,12 @@ class Dispatch
       @_sendOrConnect pack, callback, context
     else
       @trigger pack
+
+  s4: ->
+    Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1)
+
+  guid: ->
+    @s4() + @s4() + '-' + @s4() + '-' + @s4() + '-' + @s4() + '-' + @s4() + @s4() + @s4()
 
   _sendOrConnect: (pack, callback, context)->
     pack = new Dispatch pack unless (pack.toString)
