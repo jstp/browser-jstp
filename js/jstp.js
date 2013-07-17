@@ -68,6 +68,10 @@
       pack.method = "DELETE";
       return this.dispatch(pack, null, null);
     },
+    "put": function(pack) {
+      pack.method = "PUT";
+      return this.dispatch(pack, null, null);
+    },    
     release: function(pack, callback, context) {
       pack.method = "RELEASE";
       return this.dispatch(pack, callback, context);
