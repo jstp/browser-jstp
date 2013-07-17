@@ -44,7 +44,11 @@ class Dispatch
   delete: (pack)->
     pack.method = "DELETE"
     @dispatch pack, null, null
-
+    
+  put: (pack)->
+    pack.method = "PUT"
+    @dispatch pack, null, null
+    
   release: (pack, callback, context)->
     pack.method = "RELEASE"
     @dispatch pack, callback, context
