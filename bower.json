@@ -1,0 +1,29 @@
+{
+  "name": "jstp",
+  "version": "0.0.1",
+  "authors": [
+    "Fernando Vía Canel <fernando.via@gmail.com>",
+    "Luciano Bertenasco <lbertenasco@gmail.com>"
+  ],
+
+  "description": "Client side JavaScript library for JSTP",
+  "main": "jstp.js",
+
+  "keywords": [
+    "jstp",
+    "websockets",
+    "events"
+  ],
+  "license": "GPL",
+  "homepage": "https://github.com/jstp/browser-jstp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example",
+    "coffee",
+    "js"
+  ]
+}
